@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HighScores : MonoBehaviour
 {
-    const string privateCode = "pKetVG5xyEGrXiYy2kGUNAU_RDvXJUtUaMSehWcR90kg";  //Key to Upload New Info
+    const string privateCode = "Private Key";  //Key to Upload New Info
     const string publicCode = "624a1d478f40bc123c4dcf02";   //Key to download
     const string webURL = "http://dreamlo.com/lb/"; //  Website the keys are for
 
