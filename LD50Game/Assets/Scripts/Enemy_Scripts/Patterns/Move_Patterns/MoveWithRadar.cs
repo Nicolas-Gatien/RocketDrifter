@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveWithRadar : IMoveBehavior
+public class MoveWithRadar : IMovementBehavior
 {
-    Enemy enemy;
+    EnemyBase enemy;
     Rigidbody2D rb;
 
     public float curSpeed;
     public float accelerationSpeed;
     public float maxSpeed;
 
-    public MoveWithRadar(Enemy _enemy, Rigidbody2D _rb, float _accelerationSpeed, float _maxSpeed)
+    public MoveWithRadar(EnemyBase _enemy, Rigidbody2D _rb, float _accelerationSpeed, float _maxSpeed)
     {
         enemy = _enemy;
         rb = _rb;

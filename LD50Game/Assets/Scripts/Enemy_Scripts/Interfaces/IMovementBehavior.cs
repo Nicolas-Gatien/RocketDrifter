@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IMoveBehavior
+public interface IMovementBehavior
 {
     void Move(GameObject gameObject);
 }

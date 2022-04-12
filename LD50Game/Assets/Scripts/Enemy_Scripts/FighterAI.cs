@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterAI : Enemy
+public class FighterAI : EnemyBase
 {
     public GameObject engineParticle;
     Transform fighterTarget;

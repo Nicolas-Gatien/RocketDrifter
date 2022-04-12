@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankAI : Enemy
+public class TankAI : EnemyBase
 {
     public GameObject engineParticle;
     public Transform anchor;

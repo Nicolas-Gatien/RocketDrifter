@@ -27,7 +27,7 @@ public class DieOnImpact : MonoBehaviour
         }
         if (this.gameObject.CompareTag("Enemy"))
         {
-            GetComponent<Enemy>().Die();
+            GetComponent<EnemyBase>().Die();
             return;
         }
         Destroy(gameObject);

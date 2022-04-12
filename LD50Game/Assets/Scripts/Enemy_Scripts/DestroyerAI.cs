@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyerAI : Enemy
+public class DestroyerAI : EnemyBase
 {
     public float timeBtwEnemyCall;
     float timeLeftBeforeCall;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BomberAI : Enemy
+public class BomberAI : EnemyBase
 {
     public GameObject engineParticle;
 

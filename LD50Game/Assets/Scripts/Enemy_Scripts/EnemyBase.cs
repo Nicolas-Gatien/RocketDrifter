@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class Enemy : MonoBehaviour
+public class EnemyBase : MonoBehaviour
 {
     public static GameObject player;
 
@@ -91,7 +91,17 @@ public class Enemy : MonoBehaviour
 
     protected void MoveForwards()
     {
+        // Moving The Ship
+        Vector2 moveVelocity = transform.up * moveSpeed;
+        rb.velocity += moveVelocity;
 
+        // Capping Speed
+        curSpeed = rb.velocity.magnitude;
+        if (curSpeed > maxSpeed)
+        {
+            float reduction = maxSpeed / curSpeed;
+            rb.velocity *= reduction;
+        }
     }
 
     float GetAngleDifference(Transform target)
