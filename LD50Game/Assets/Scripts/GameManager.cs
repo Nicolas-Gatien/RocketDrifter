@@ -8,6 +8,17 @@ public class GameManager : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject scoreIndicator;
 
+    // Global Variables
+    public static GameObject player;
+
+    public static LayerMask ENEMY_LAYER;
+
+    private void Start()
+    {
+        ENEMY_LAYER = LayerMask.GetMask("Enemy");
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
