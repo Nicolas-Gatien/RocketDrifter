@@ -20,11 +20,14 @@ public class ConstantMovement : IMovementBehavior
     public float radarSize;
     public int safety;
 
-    public ConstantMovement(Enemy _enemy, float _accelerationSpeed, float _maxSpeed, float _turnSpeed)
+    public ConstantMovement(Enemy _enemy, float _accelerationSpeed, float _maxSpeed, float _turnSpeed, float _radarSize, int _safety)
     {
         enemy = _enemy;
         accelerationSpeed = _accelerationSpeed;
         maxSpeed = _maxSpeed;
+        turnSpeed = _turnSpeed;
+        radarSize = _radarSize;
+        safety = _safety;
     }
 
     public void Move(GameObject _gameObject)
@@ -34,6 +37,7 @@ public class ConstantMovement : IMovementBehavior
         transform = gameObject.transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
 
+        ApplyDirection();
         ApplyVelocity();
     }
 
@@ -45,7 +49,7 @@ public class ConstantMovement : IMovementBehavior
         float angleTowardsPlayer = GetAngleTowards(player.transform);
         float angleAwayFromEnemies = 0;
 
-        // Calculate Angle Away From Enemies
+        // Calculate Angle Away From Nearby Enemies
         for (int i = 0; i < enemies.Count; i++)
         {
             angleAwayFromEnemies = (angleAwayFromEnemies + (GetAngleAway(enemies[i].gameObject.transform)) / 2);

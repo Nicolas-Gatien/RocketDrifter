@@ -7,7 +7,7 @@ public class TankAI : Enemy
     // Constructor
     public TankAI()
     {
-        movementBehavior = new ConstantMovement(this, 0.2f, 3);
+        movementBehavior = new ConstantMovement(this, 0.2f, 3, 3, 2, 2);
         deathBehavior = new Explode();
         takeDamageBehavior = new StopMovement();
     }
