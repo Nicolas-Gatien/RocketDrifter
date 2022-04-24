@@ -27,7 +27,10 @@ public class StopMovement : ITakeDamageBehavior
         whiteShader = Shader.Find("GUI/Text Shader");
         defaultShader = Shader.Find("Sprites/Default");
 
-        rb.velocity = Vector2.zero;
+        if (enemy.health - damage > 0)
+        {
+            rb.velocity = Vector2.zero;
+        }
 
         enemy.health -= damage;
         WhiteSprite();
