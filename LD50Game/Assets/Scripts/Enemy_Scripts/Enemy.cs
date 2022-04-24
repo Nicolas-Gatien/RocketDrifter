@@ -80,4 +80,13 @@ public abstract class Enemy : MonoBehaviour
             PerformDeath();
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            PerformTakeDamage(1);
+            Destroy(other.gameObject);
+        }
+    }
 }
