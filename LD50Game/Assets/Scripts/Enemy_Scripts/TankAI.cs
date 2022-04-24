@@ -8,8 +8,8 @@ public class TankAI : Enemy
     public TankAI()
     {
         movementBehavior = new ConstantMovement(this, 0.2f, 3, 3, 2, 2);
-        deathBehavior = new Explode();
-        takeDamageBehavior = new StopMovement();
+        deathBehavior = new Explode(this);
+        takeDamageBehavior = new StopMovement(this);
     }
 
     public TankAI(IMovementBehavior mb, IDeathBehavior db, ITakeDamageBehavior tdb)

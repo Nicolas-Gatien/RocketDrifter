@@ -80,4 +80,28 @@ public abstract class Enemy : MonoBehaviour
             PerformDeath();
         }
     }
+
+    public void CalculateScore()
+    {
+        float curSpeed = rb.velocity.magnitude;
+        int score = (int)(maxHealth * curSpeed);
+
+        if (ScoreManager.isPlayerMoving == true)
+        {
+            score *= (int)FindObjectOfType<PlayerMovement>().curSpeed;
+        }
+
+        score /= 5;
+        ScoreManager.score += score;
+        FindObjectOfType<GameManager>().DisplayScore(score, transform);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            PerformTakeDamage(1);
+            Destroy(other.gameObject);
+        }
+    }
 }

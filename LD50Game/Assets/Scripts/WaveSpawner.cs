@@ -73,7 +73,5 @@ public class WaveSpawner : MonoBehaviour
         startTimeBtwSpawn *= 0.99f;
 
         Instantiate(enemies[Random.Range(0, enemies.Count)], new Vector2(xPos, yPos), Quaternion.identity);
-
-
     }
 }
